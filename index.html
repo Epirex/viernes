@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+		<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+		<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+		<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+		<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+		<head>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<title>lapaginadeesteban - Slider Revolution</title>
+			<meta name="description" content="Slider Revolution Example" />
+			<meta name="keywords" content="fullscreen image, grid layout, flexbox grid, transition" />
+			<meta name="author" content="ThemePunch" />
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+
+			<!-- LOAD JQUERY LIBRARY -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+			
+			<!-- LOADING FONTS AND ICONS -->
+			<link href="https://fonts.googleapis.com/css?family=Roboto:400%7CIndie+Flower:400&display=swap" rel="stylesheet" property="stylesheet" media="all" type="text/css" >
+
+			
+			<link rel="stylesheet" type="text/css" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+			<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+			
+			<!-- REVOLUTION STYLE SHEETS -->
+			<link rel="stylesheet" type="text/css" href="css/rs6.css">
+			<!-- REVOLUTION LAYERS STYLES -->
+						<!-- REVOLUTION JS FILES -->
+			
+		<script>
+			window.RS_MODULES = window.RS_MODULES || {};
+			window.RS_MODULES.modules = window.RS_MODULES.modules || {};
+			window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
+			window.RS_MODULES.defered = true;
+			window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
+			window.RS_MODULES.type = 'compiled';
+		</script>
+					<script src="js/rbtools.min.js"></script>
+							<script src="js/rs6.min.js"></script>
+							
+			<script>function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;
+				try {
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) || (e.l=="fullwidth" || e.layout=="fullwidth") ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);
+					if(e.layout==="fullscreen" || e.l==="fullscreen")
+						newh = Math.max(e.mh,window.RSIH);
+					else{
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,
+							sl;
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}
+					var el = document.getElementById(e.c);
+					if (el!==null && el) el.style.height = newh+"px";
+					el = document.getElementById(e.c+"_wrapper");
+					if (el!==null && el) {
+						el.style.height = newh+"px";
+						el.style.display = "block";
+					}
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}
+			//});
+		  };</script>
+
+			
+		</head>
+		
+		<body style="margin: 0;">
+		
+
+			<!-- START lapaginadeesteban REVOLUTION SLIDER 6.6.12 --><p class="rs-p-wp-fix"></p>
+			<rs-module-wrap id="rev_slider_1_1_wrapper" data-alias="esteban" data-source="gallery" style="visibility:hidden;background:transparent;padding:0;">
+				<rs-module id="rev_slider_1_1" style="" data-version="6.6.12">
+					<rs-slides style="overflow: hidden; position: absolute;">
+						<rs-slide style="position: absolute;" data-key="rs-1" data-title="Inicio" data-in="o:0;" data-out="a:false;">
+							<img src="assets/transparent.png" alt="Inicio" class="rev-slidebg tp-rs-img" data-bg="c:#007aff;" data-no-retina>
+<!--
+							--><rs-layer
+								id="slider-1-slide-1-layer-1" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:657px;y:372px;"
+								data-text="w:normal;"
+								data-dim="w:640px;h:360px;"
+								data-frame_999="o:0;st:w;"
+								style="z-index:5;"
+							><img src="assets/july3p-taringa.gif" alt="" class="tp-rs-img" width="640" height="360" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-2" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:1300px;y:22px;"
+								data-text="w:normal;"
+								data-dim="w:400px;h:290px;"
+								data-frame_999="o:0;st:w;"
+								style="z-index:6;"
+							><img src="assets/dance-kid.gif" alt="" class="tp-rs-img" width="400" height="290" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-3" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:462px;y:518px;"
+								data-text="w:normal;"
+								data-dim="w:148px;h:148px;"
+								data-frame_999="o:0;st:w;"
+								style="z-index:7;"
+							><img src="assets/dancante-club.gif" alt="" class="tp-rs-img" width="498" height="498" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-4" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:14px;y:26px;"
+								data-text="w:normal;"
+								data-dim="w:164px;h:174px;"
+								data-frame_999="o:0;st:w;"
+								style="z-index:8;"
+							><img src="assets/banana-dance.gif" alt="" class="tp-rs-img" width="364" height="386" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-5" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:1702px;y:6px;"
+								data-text="w:normal;"
+								data-dim="w:206px;h:191px;"
+								data-frame_999="o:0;st:w;"
+								style="z-index:9;"
+							><img src="assets/dance-dog.gif" alt="" class="tp-rs-img" width="56" height="52" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-6" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:1344px;y:546px;"
+								data-text="w:normal;"
+								data-dim="w:99px;h:110px;"
+								data-frame_999="o:0;st:w;"
+								style="z-index:10;"
+							><img src="assets/dog-dance.gif" alt="" class="tp-rs-img" width="99" height="110" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-8" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:560px;y:780px;"
+								data-text="w:normal;"
+								data-dim="w:281px;h:284px;"
+								data-frame_999="o:0;st:w;"
+								style="z-index:12;"
+							><img src="assets/dancing-funny.gif" alt="" class="tp-rs-img" width="634" height="640" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-9" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:1602px;y:776px;"
+								data-text="w:normal;"
+								data-dim="w:283px;h:267px;"
+								data-frame_999="o:0;st:w;"
+								style="z-index:13;"
+							><img src="assets/july3p-dance.gif" alt="" class="tp-rs-img" width="400" height="378" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-10" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:38px;y:404px;"
+								data-text="w:normal;"
+								data-dim="w:358px;h:640px;"
+								data-frame_999="o:0;st:w;"
+								style="z-index:14;"
+							><img src="assets/gigolo-taringa.gif" alt="" class="tp-rs-img" width="358" height="640" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-11" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:1126px;y:792px;"
+								data-text="w:normal;"
+								data-dim="w:278px;h:264px;"
+								data-frame_999="o:0;st:w;"
+								style="z-index:15;"
+							><img src="assets/francella-taringa.gif" alt="" class="tp-rs-img" width="498" height="473" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-13" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:1518px;y:382px;"
+								data-text="w:normal;"
+								data-dim="w:360px;h:268px;"
+								data-frame_999="o:0;st:w;"
+								style="z-index:16;"
+							><img src="assets/alex-elcapo-bailando-1.gif" alt="" class="tp-rs-img" width="360" height="268" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-14" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:274px;y:22px;"
+								data-text="w:normal;"
+								data-dim="w:305px;h:336px;"
+								data-frame_999="o:0;st:w;"
+								style="z-index:17;"
+							><img src="assets/7489727d9aeeadd011c0f21bd2eda798.gif" alt="" class="tp-rs-img" width="200" height="220" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-15" 
+								class="rs-layer-audio rs-layer-hidden"
+								data-type="audio"
+								data-rsp_ch="on"
+								data-xy="x:64px;y:288px;"
+								data-text="w:normal;"
+								data-dim="w:54;h:54;"
+								data-video="w:54;h:54;p:auto;nse:false;l:true;vd:100;ptimer:false;"
+								data-mp4="assets/y2mate.com-Taringa-at-night-Dead-or-Alive-You-Spin-Me-Round.mp3"
+								data-frame_999="o:0;st:w;"
+								style="z-index:18;"
+							> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-17" 
+								data-type="text"
+								data-color="#fff"
+								data-rsp_ch="on"
+								data-xy="x:644px;y:88px;"
+								data-text="w:normal;s:104;l:118;ls:4;a:center;"
+								data-frame_999="o:0;st:w;"
+								style="z-index:19;font-family:'Indie Flower';"
+							>La pagina <br />de Esteban!!! 
+							</rs-layer><!--
+-->						</rs-slide>
+					</rs-slides>
+				</rs-module>
+				<script>
+					
+				</script>
+<script>
+		if(typeof revslider_showDoubleJqueryError === "undefined") {function revslider_showDoubleJqueryError(sliderID) {console.log("You have some jquery.js library include that comes after the Slider Revolution files js inclusion.");console.log("To fix this, you can:");console.log("1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on");console.log("2. Find the double jQuery.js inclusion and remove it");return "Double Included jQuery Library";}}
+</script>
+			</rs-module-wrap>
+			<!-- END REVOLUTION SLIDER -->
+
+				<script>
+					var	tpj = jQuery;
+					if(window.RS_MODULES === undefined) window.RS_MODULES = {};
+					if(RS_MODULES.modules === undefined) RS_MODULES.modules = {};
+					RS_MODULES.modules["revslider11"] = {once: RS_MODULES.modules["revslider11"]!==undefined ? RS_MODULES.modules["revslider11"].once : undefined, init:function() {
+						window.revapi1 = window.revapi1===undefined || window.revapi1===null || window.revapi1.length===0  ? document.getElementById("rev_slider_1_1") : window.revapi1;
+						if(window.revapi1 === null || window.revapi1 === undefined || window.revapi1.length==0) { window.revapi1initTry = window.revapi1initTry ===undefined ? 0 : window.revapi1initTry+1; if (window.revapi1initTry<20) requestAnimationFrame(function() {RS_MODULES.modules["revslider11"].init()}); return;}
+						window.revapi1 = jQuery(window.revapi1);
+						if(window.revapi1.revolution==undefined){ revslider_showDoubleJqueryError("rev_slider_1_1"); return;}
+						revapi1.revolutionInit({
+								revapi:"revapi1",
+								DPR:"dpr",
+								sliderLayout:"fullscreen",
+								visibilityLevels:"1240,1024,778,480",
+								gridwidth:1920,
+								gridheight:1080,
+								perspective:600,
+								perspectiveType:"global",
+								editorheight:"1080,768,960,720",
+								responsiveLevels:"1240,1024,778,480",
+								progressBar:{disableProgressBar:true},
+								navigation: {
+									onHoverStop:false
+								},
+								viewPort: {
+									global:false,
+									globalDist:"-200px",
+									enable:false
+								},
+								fallbacks: {
+									allowHTML5AutoPlayOnAndroid:true
+								},
+						});
+						
+					}} // End of RevInitScript
+					if (window.RS_MODULES.checkMinimal!==undefined) { window.RS_MODULES.checkMinimal();};
+				</script>
+
+
+
+		</body>
+				</html>
+		
